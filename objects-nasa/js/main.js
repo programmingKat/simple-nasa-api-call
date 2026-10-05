@@ -12,17 +12,18 @@ function displayPicDay(){
     let inputDate = document.querySelector('input').value
     //.replaceAll("-","")
     console.log(inputDate)
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=nhrHbtbFWsveErfIvISkowbkInLSx7IzTJVwVtrB&date=${inputDate}`)
+//zHUeWEVQ5nf67uEys5Pg1GLCtSHJNslKQJZHfDeG
+    fetch(`https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=zHUeWEVQ5nf67uEys5Pg1GLCtSHJNslKQJZHfDeG&date=${inputDate}`)
     //step 1: take result and parse it into json
     .then(res => res.json())
     //step 2: do stuff here:
     .then(data => { 
         console.log(data) 
-        document.querySelector('h2').innerText = data.title
+        document.querySelector('h2').innerText = data[0].title
         //img data.hdurl
-        document.querySelector('img').src = data.hdurl
+        document.querySelector('img').src = data[0].hdurl
         //description data.explanation
-        document.querySelector('h3').innerText = data.explanation
+        document.querySelector('h3').innerHTML = data[0].explanation
     })
     //try catch error here
     .catch(err => {
