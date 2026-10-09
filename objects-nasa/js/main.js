@@ -19,11 +19,15 @@ function displayPicDay(){
     //step 2: do stuff here:
     .then(data => { 
         console.log(data) 
+        document.querySelector('h2').classList.toggle('hidden')
         document.querySelector('h2').innerText = data[0].title
         //img data.hdurl
+        document.querySelector('#img-div').classList.toggle('hidden')
         document.querySelector('img').src = data[0].hdurl
         //description data.explanation
+        document.querySelector('h3').classList.toggle('hidden')
         document.querySelector('h3').innerHTML = data[0].explanation
+        
     })
     //try catch error here
     .catch(err => {
