@@ -9,24 +9,26 @@ document.querySelector('button').addEventListener('click', displayPicDay)
 //img
 //description
 function displayPicDay(){
-    let inputDate = document.querySelector('input').value
+    let inputDate = document.querySelector('input').value.slice(2).replaceAll("-","")
     //.replaceAll("-","")
+    //YYMMDD
+    //2026-10-01
     console.log(inputDate)
 //zHUeWEVQ5nf67uEys5Pg1GLCtSHJNslKQJZHfDeG
-    fetch(`https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=zHUeWEVQ5nf67uEys5Pg1GLCtSHJNslKQJZHfDeG&date=${inputDate}`)
+    fetch(`https://science.nasa.gov/wp-json/wp/v2/apod-basic/${inputDate}?api_key=zHUeWEVQ5nf67uEys5Pg1GLCtSHJNslKQJZHfDeG&`)
     //step 1: take result and parse it into json
     .then(res => res.json())
     //step 2: do stuff here:
     .then(data => { 
         console.log(data) 
         document.querySelector('h2').classList.toggle('hidden')
-        document.querySelector('h2').innerText = data[0].title
+        document.querySelector('h2').innerText = data.title
         //img data.hdurl
         document.querySelector('#img-div').classList.toggle('hidden')
-        document.querySelector('img').src = data[0].hdurl
+        document.querySelector('img').src = data.hdurl
         //description data.explanation
         document.querySelector('h3').classList.toggle('hidden')
-        document.querySelector('h3').innerHTML = data[0].explanation
+        document.querySelector('h3').innerHTML = data.explanation
         
     })
     //try catch error here
