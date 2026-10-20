@@ -1,4 +1,4 @@
-# Project: Restaurant API ✨
+# Project: Simple NASA API ✨
 
 ### Goal: A simple front-end app that displays data returned from NASA's API
 
