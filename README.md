@@ -10,7 +10,7 @@
   
 ## How to Use
 
-1. Check out the [Recipe Roulette Page here](https://programmingkat.github.io/simple-nasa-api-call/).
+1. Check out the [NASA Picture of the Day here](https://programmingkat.github.io/simple-nasa-api-call/).
 2. Select a date and click the "Get Picture" button.
 3. You will get the corresponding picture + info  for that day!
 
