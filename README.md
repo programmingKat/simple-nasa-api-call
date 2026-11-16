@@ -1,9 +1,10 @@
 # Project: Simple NASA API ✨
 
-### Goal: A simple front-end app that displays data returned from NASA's API
+### Goal
+* A simple front-end app that displays data returned from NASA's API
 
-## Result: A simple app that allows you to retrieve NASA'S picture of the day 
-
+## Result
+*  A simple app that allows you to retrieve NASA'S picture of the day 
 * An app that calls the Picture of the day API to fetch data.
 * User inputs data -> image title, image, and description are displayed.
 
